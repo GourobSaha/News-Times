@@ -12,7 +12,7 @@ const loadNewsCategory = async (data) => {
 }
 
 const displayCategoryName = (categories) => {
-    console.log(categories)
+    // console.log(categories)
     const categoryContainer = document.getElementById('category-container');
 
     categories.forEach(category => {
@@ -40,7 +40,7 @@ const loadNews = async (category_id) => {
 }
 
 const displayNews = (categoryId) => {
-    console.log(categoryId.data);
+    // console.log(categoryId.data);
     const newsLength = (categoryId.data).length;
     const itemNumber = document.getElementById('number-of-items');
     itemNumber.textContent = '';
@@ -62,7 +62,7 @@ const displayNews = (categoryId) => {
     const newsItemsContainer = document.getElementById('news-items');
     newsItemsContainer.textContent = '';
     newsItems.forEach(newsItem => {
-        console.log(newsItem);
+        // console.log(newsItem);
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('mb-5')
         newsDiv.innerHTML = `
@@ -85,15 +85,35 @@ const displayNews = (categoryId) => {
                         <div class="flex items-center">
                             <i class="fa-solid fa-star mr-2"></i><p class="font-semibold"> Rating: ${newsItem.rating.number ? newsItem.rating.number : "Hidden"}</p>
                         </div>
-                        <button class="btn btn-primary">View More</button>
-                    </div>
+                        <label for="news-modal" onclick="loadNewsDetails('${newsItem._id}')" class="btn btn-outline">View More <i class="ml-2 fa-solid fa-circle-chevron-right"></i></label>
                 </div>
             </div>
         `;
         newsItemsContainer.appendChild(newsDiv);
     });
 
+}
 
+const loadNewsDetails = async (news_id) => {
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        modalNews(data.data[0]);
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+
+const modalNews = (newsDetails) => {
+    console.log(newsDetails);
+    const newsDetailsModal = document.getElementById('modal-news-details');
+    newsDetailsModal.innerHTML = `
+        <img class="mb-5" src=${newsDetails.image_url}" alt="Album">
+        <h2 class="text-xl font-semibold">${newsDetails.title}</h2>
+        <p class="text-stone-500">${(newsDetails.details)}...</p>
+    `;
 
 }
 
