@@ -23,10 +23,13 @@ const displayCategoryName = (categories) => {
         categoryDiv.innerHTML = `
             <button id = "category-btn" onclick="loadNews('${category.category_id}'); toggleSpinner(${true})" class="my-3 btn btn-ghost w-full">${category.category_name}</button>
         `;
+
         categoryContainer.appendChild(categoryDiv);
+
     });
 
 }
+
 
 // Function for Spinner
 const toggleSpinner = isLoading => {
@@ -50,6 +53,7 @@ const loadNews = async (category_id) => {
     catch (error) {
         console.error(error);
     }
+
 }
 
 //Displaying News in News Page
