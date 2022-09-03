@@ -40,7 +40,81 @@
         </section>
     </header>
     <main class="container mx-auto">
+        <section class="my-8">
+            <div class="p-5 border rounded-lg shadow-lg mb-5">
+                <h1 class="text-xl font-semibold mb-3">Difference between var, let and const keywords in JavaScript</h1>
+                <p><span class="font-bold">let:</span> The let keyword declares a block-scoped local variable,
+                    optionally initializing it to a value.
+                    Block-scoped means that the variable is only available within the block it was declared in, which is
+                    usually denoted by
+                    curly braces {}.
+                    <br>
+                    <span class="font-bold">var:</span> The var keyword declares a function-scoped or global variable,
+                    optionally initializing it to a
+                    value.
+                    Function-scoped means that the variable is only available within the function it was declared in.
+                    Global variables are
+                    available throughout your entire code.
+                    <br>
+                    <span class="font-bold">const:</span> The const keyword declares a block-scoped, immutable constant
+                    variable, i.e. a variable that
+                    can't be reassigned.
+                    Constants are also called “immutable variables”, but that's a bit of a misnomer since they are
+                    actually variables - just
+                    ones that can't be reassigned.
+                    <br>
+                    The var keyword is the oldest way of declaring variables in JavaScript and is supported by all
+                    browsers. The let and
+                    const keywords are newer additions to the language and are not supported by older browsers. If you
+                    need to support older browsers, you can use var instead of let or const. If you don't need to
+                    support older
+                    browsers, you can use let or const. If you want your variable to be immutable, use const. Another
+                    difference between var and let/const is that var variables are function-scoped, while let and const
+                    variables
+                    are block-scoped. This means that var variables are only available within the function they were
+                    declared in. On the other hand, let and const variables are only available within the block they
+                    were declared in.
+                </p>
+            </div>
+            <div class="p-5 border rounded-lg shadow-lg mb-5">
+                <h1 class="text-xl font-semibold mb-3">Difference between regular function and arrow function in
+                    JavaScript
+                </h1>
+                <p><span class="bg-slate-200 font-semibold">this</span> keyword is one of the most used keywords in
+                    JavaScript. But
+                    when it comes to regular functions
+                    and arrow functions, it behaves in entirely different ways. In regular function, <span
+                        class="bg-slate-200 font-semibold">this</span> changes
+                    according to the way that function is invoked. But, in the arrow functions, the behavior of
+                    <span class="bg-slate-200 font-semibold">this</span> changes completely.
 
+                    Arrow functions don't have their own <span class="bg-slate-200 font-semibold">this</span>, and they
+                    don't
+                    redefine the value of <span class="bg-slate-200 font-semibold">this</span> within the function. In
+                    regular JavaScript functions, arguments keywords can be used to access the passed arguments when the
+                    function is
+                    invoked. But, arrow functions do not have their own arguments and it uses the arguments from the
+                    outer function.
+
+                    The behavior of the arguments keyword within an arrow function is similar to the behavior of <span
+                        class="bg-slate-200 font-semibold">this</span>
+                    keyword we discussed
+                    earlier, and it is resolved lexically. As well know, we can easily construct objects with regular
+                    functions. We just need to invoke the function with the new
+                    keyword. However, arrow functions can not be used as constructors. Since this keyword is resolved
+                    lexically in arrow functions, we cant use it to construct objects. In regular functions, we can use
+                    the <span class="bg-slate-200 font-semibold">return</span> keyword to return any value from a
+                    function. If we don't return anything,
+                    the function will implicitly return <span class="bg-slate-200 font-semibold">undefined</span>. Arrow
+                    functions behave in the same way when returning values. But there is one advantage you can take from
+                    it.
+
+                    If the arrow function contains one expression, you can omit the curly braces, and then the
+                    expression will be implicitly
+                    returned.
+                </p>
+            </div>
+        </section>
     </main>
 </body>
 
