@@ -18,8 +18,10 @@
     <title>News Times</title>
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
+    <!-- Header Started -->
     <header class="container mx-auto">
+        <!-- Navbar Section  -->
         <section class="md:p-5">
             <div class="navbar bg-base-100">
                 <div class="flex-1">
@@ -35,12 +37,12 @@
             </div>
         </section>
         <hr class="mx-auto">
-        <section>
-            <div id="category-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 my-5"></div>
-        </section>
     </header>
+    <!-- Header Ended -->
+    <!-- Main Section Started  -->
     <main class="container mx-auto">
         <section class="my-8">
+            <!-- Blog-1  -->
             <div class="p-5 border rounded-lg shadow-lg mb-5">
                 <h1 class="text-xl font-semibold mb-3">Difference between var, let and const keywords in JavaScript</h1>
                 <p><span class="font-bold">let:</span> The let keyword declares a block-scoped local variable,
@@ -76,6 +78,7 @@
                     were declared in.
                 </p>
             </div>
+            <!-- Blog-2  -->
             <div class="p-5 border rounded-lg shadow-lg mb-5">
                 <h1 class="text-xl font-semibold mb-3">Difference between regular function and arrow function in
                     JavaScript
@@ -114,6 +117,7 @@
                     returned.
                 </p>
             </div>
+            <!-- Blog-3  -->
             <div class="p-5 border rounded-lg shadow-lg mb-5">
                 <h1 class="text-xl font-semibold mb-3">Differences between forEach() and map() methods in
                     JavaScript
@@ -132,6 +136,7 @@
                     and returns the
                     element that matches and the element that do not match are removed.</p>
             </div>
+            <!-- Blog-4  -->
             <div class="p-5 border rounded-lg shadow-lg mb-5">
                 <h1 class="text-xl font-semibold mb-3">Template Strings in JavaScript</h1>
                 <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
@@ -163,6 +168,30 @@
             </div>
         </section>
     </main>
+    <!-- Main Section Ended  -->
+    <!-- Footer Section Started -->
+    <footer class="footer footer-center p-10 bg-slate-800 text-base-content mt-auto text-slate-300">
+        <div class="grid grid-flow-col gap-4">
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4 text-2xl">
+                <a href="https://www.facebook.com/dailystarnews/" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-facebook mx-2"></i></a>
+                <a href="https://twitter.com/dailystarnews" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-twitter mx-2"></i></a>
+                <a href="https://www.youtube.com/channel/UCKSJ5rTXq-pYgAmAOhVS_zQ" target="_blank"
+                    rel="noopener noreferrer"><i class="fa-brands fa-youtube mx-2"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>Copyright © 2022 - All right reserved by News Times</p>
+        </div>
+    </footer>
+    <!-- Footer Section Ended-->
 </body>
 
 </html>
