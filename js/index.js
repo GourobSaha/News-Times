@@ -14,17 +14,27 @@ const loadNewsCategory = async (data) => {
 const displayCategoryName = (categories) => {
     // console.log(categories)
     const categoryContainer = document.getElementById('category-container');
-
     categories.forEach(category => {
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('text-center')
         // console.log(category.category_id);
         categoryDiv.innerHTML = `
-            <button id = "category-btn" onclick="loadNews('${category.category_id}')" class="my-3 btn btn-ghost w-full">${category.category_name}</button>
+            <button id = "category-btn" onclick="loadNews('${category.category_id}'); toggleSpinner(${true})" class="my-3 btn btn-ghost w-full">${category.category_name}</button>
         `;
         categoryContainer.appendChild(categoryDiv);
     });
 
+}
+
+// 
+const toggleSpinner = isLoading => {
+    const loadingSection = document.getElementById('loader');
+    if (isLoading) {
+        loadingSection.classList.remove('hidden');
+    }
+    else {
+        loadingSection.classList.add('hidden');
+    }
 }
 
 const loadNews = async (category_id) => {
@@ -91,6 +101,7 @@ const displayNews = (categoryId) => {
         `;
         newsItemsContainer.appendChild(newsDiv);
     });
+    toggleSpinner(false);
 
 }
 
